@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'devWebAngular';
+
+  tasks : string[] = [];
+
+  addTask(newTask: string){
+    this.tasks.push(newTask);
+  }
 }
