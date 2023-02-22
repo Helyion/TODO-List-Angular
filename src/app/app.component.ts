@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient} from "@angular/common/http";
+import {TaskService} from "./@Shared/services/task.service";
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,12 @@ import { HttpClient} from "@angular/common/http";
 export class AppComponent {
   title = 'devWebAngular';
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private taskService: TaskService) {
   }
   tasks : string[] = [];
 
   addTask(newTask: string){
-    this.httpClient.post("http://localhost:3000/tasks",{name: newTask}).subscribe();
+    this.taskService.add(newTask).subscribe();
     //this.tasks.push(newTask);
   }
 }
