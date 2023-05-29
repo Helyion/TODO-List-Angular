@@ -13,9 +13,12 @@ export class AppComponent {
   constructor(private httpClient: HttpClient, private taskService: TaskService) {
   }
   tasks : string[] = [];
+  nbTasks: number = 0;
 
   addTask(newTask: string){
-    this.taskService.add(newTask).subscribe();
-    //this.tasks.push(newTask);
+    //this.taskService.add(newTask).subscribe();
+    this.tasks.push(newTask);
+    this.nbTasks = this.tasks.length;
   }
+
 }

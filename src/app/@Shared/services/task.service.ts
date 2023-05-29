@@ -7,9 +7,9 @@ import {HttpClient} from "@angular/common/http";
 export class TaskService {
 
   constructor(private httpClient: HttpClient) { }
-
+/*
   add(newTask: string){
-    return this.httpClient.post("http://localhost:3000/tasks",{name: newTask});
-  }
+    return this.httpClient.post("http://localhost:4200",{name: newTask});
+  }*/
 
 }
